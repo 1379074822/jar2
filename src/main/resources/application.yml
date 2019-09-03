@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/maven?useUnicode=true&characterEncoding=utf8&serverTimezone=CTT
+    username: root
+    password: password
+
+mybatis:
+  type-aliases-package: com.coffee.dubbo_example.domain
+  mapper-locations: classpath:dao/*.xml
+
+server:
+  port: 80
