@@ -10,4 +10,4 @@ mybatis:
   mapper-locations: classpath:dao/*.xml
 
 server:
-  port: 80
+  port: 8080

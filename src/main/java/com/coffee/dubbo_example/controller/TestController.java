@@ -3,9 +3,8 @@ package com.coffee.dubbo_example.controller;
 import com.coffee.dubbo_example.dao.ItemDao;
 import com.coffee.dubbo_example.domain.Item;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
  * @time: 2019/8/30 19:13
  */
 
-@Controller
+@RestController
 @RequestMapping("/test")
 public class TestController {
 
@@ -23,7 +22,6 @@ public class TestController {
     private ItemDao itemDao;
 
     @RequestMapping("/test1")
-    @ResponseBody
     public void test1(){
         System.out.println("111");
     }
@@ -33,10 +31,15 @@ public class TestController {
     }
 
     @RequestMapping("/mybaits")
-    @ResponseBody
-    public void test3(){
+    public void test3(String username,String password){
+        System.out.println(username+password);
         List<Item> all = itemDao.findAll();
         System.out.println(all);
+    }
+    @RequestMapping("/test4")
+    public List<Item> test4(){
+        List<Item> all = itemDao.findAll();
+        return all;
     }
 
 }
