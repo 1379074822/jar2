@@ -1,5 +1,6 @@
 package com.coffee.dubbo_example.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,8 @@ import java.util.Date;
  * @author: Mr.Lian
  * @time: 2019/8/31 8:17
  */
-public class Item {
+public class Item implements Serializable {
+    private static final long serialVersionUID = 2747242824053242044L;
     private Integer id;
     private String name;
     private Float price;

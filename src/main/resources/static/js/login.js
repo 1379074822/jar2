@@ -289,6 +289,31 @@ config.search = {
                             name: 'luckincoffee'                          // 弹窗名称
                         });
                     }
+                },
+                {
+                    tag: 'button',
+                    text: '1',
+                    onClick: function () {
+                        var data = {
+                            name: 'john',
+                            age: 18,
+                            interesting: ['basketball', 'football'],
+                            friends: [
+                                {
+                                    name: 'james',
+                                    age: 18,
+                                    interesting: ['basketball', 'football'],
+                                },
+                                {
+                                    name: 'hans',
+                                    age: 18,
+                                    interesting: ['basketball', 'football'],
+                                }
+                            ]
+                        }
+
+                        console.log(lv.dataFlat(data));
+                    }
                 }
             ]
         }
